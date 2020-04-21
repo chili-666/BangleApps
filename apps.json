@@ -163,6 +163,18 @@
       {"name":"wclock.img","url":"clock-word-icon.js","evaluate":true}
     ]
   },
+  { "id": "bluesec",
+    "name": "Blue Seconds Clock",
+    "icon": "",
+    "version":"0.01",
+    "description": "Fork of Bold Clock, with blue watch face for seconds and date",
+    "tags": "clock",
+    "type":"clock",
+    "allow_emulator":true,
+    "storage": [
+      {"name":"bluesec.app.js","url":"bluesec.app.js"}
+    ]
+  },
   { "id": "aclock",
     "name": "Analog Clock",
     "icon": "clock-analog.png",
