@@ -274,9 +274,9 @@ Bangle.on('faceUp',function(up){
 g.clear();
 Bangle.loadWidgets();
 Bangle.drawWidgets();
-
-startTimers();
 startSeconds();
+startTimers();
+
 
 // Show launcher when middle button pressed
 setWatch(Bangle.showLauncher, BTN2, {repeat:false,edge:"falling"});
