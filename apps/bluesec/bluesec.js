@@ -105,7 +105,7 @@ function hour_angle(date){
 function draw_clock(){
     //console.log("draw_clock");
     let date = new Date();
-    g.clear();
+    g.clearRect(0,24,239,239) 
     g.setBgColor(0,0,0);
     g.setColor(0,0,0);
     g.fillRect(0,24,239,239); // clear app area
