@@ -16,6 +16,8 @@ var second_hand = {
     buffer : E.toArrayBuffer(atob("/////////////////////////////////////////////////////////////////////////w=="))
 };
 
+var gs = Graphics.createArrayBuffer(54,54,16);
+
 //g.fillRect(0,24,239,239); // Apps area
 let intervalRef = null;
 let intervalRef2 = 1000;
@@ -178,27 +180,28 @@ function draw_clock(){
 }
 
 function drawSecondFace() {
-  g.setColor(0,0.5,1);   
-  g.fillCircle(seconds_clock.x, seconds_clock.y, 27);
-  g.setColor(0,0.2,0.9);   
-  g.fillCircle(seconds_clock.x, seconds_clock.y, 18);
-   g.setColor(0,0.1,0.7);   
-  g.fillCircle(seconds_clock.x, seconds_clock.y, 9);
-   g.setColor(0,0,0.5);   
-  g.fillCircle(seconds_clock.x, seconds_clock.y, 4);
+  gs.setColor(0,0.5,1);   
+  gs.fillCircle(seconds_clock.x, seconds_clock.y, 27);
+  gs.setColor(0,0.2,0.9);   
+  gs.fillCircle(seconds_clock.x, seconds_clock.y, 18);
+   gs.setColor(0,0.1,0.7);   
+  gs.fillCircle(seconds_clock.x, seconds_clock.y, 9);
+   gs.setColor(0,0,0.5);   
+  gs.fillCircle(seconds_clock.x, seconds_clock.y, 4);
     
 }
 
 function drawSecondHand() {
   //console.log("Drawing Secondhand!");
-  g.setColor(0,0.5,1);
-  g.fillCircle(seconds_clock.x, seconds_clock.y, 27);
+  gs.setColor(0,0.5,1);
+  gs.fillCircle(seconds_clock.x, seconds_clock.y, 27);
   drawSecondFace();
   let date =new Date();
   let second_agl = second_angle(date);
   //draw second hand
-    g.setColor(1,1,1);
-    g.drawImage(second_hand, second_pos_x(second_agl), second_pos_y(second_agl), {rotate:second_agl*p180});
+    gs.setColor(1,1,1);
+    gs.drawImage(second_hand, second_pos_x(second_agl), second_pos_y(second_agl), {rotate:second_agl*p180});
+    g.drawImage({width:54,height:54,bpp:16,b­uffer:gs.buffer}, ox,oy)
 }
 
 function clearTimers(){
